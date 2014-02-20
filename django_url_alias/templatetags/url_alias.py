@@ -9,7 +9,7 @@ register = template.Library()
 class AliasedURLNode(template.Node):
     def __init__(self, url_node):
         self.asvar = url_node.asvar
-        url_node.asvar = None
+        url_node.asvar = None  # we need to handle pushing into context ourself, so we skip the URLNode mechanism
         self.url_node = url_node
 
     def render(self, context):

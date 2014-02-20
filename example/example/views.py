@@ -1,4 +1,5 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
+from django.contrib.flatpages.models import FlatPage
 
 
 class TestView(TemplateView):
@@ -6,3 +7,11 @@ class TestView(TemplateView):
 
 
 test = TestView.as_view()
+
+
+class FlatpagesView(DetailView):
+    queryset = FlatPage.objects.all()
+    template_name = 'example/flatpage.html'
+
+
+flatpage = FlatpagesView.as_view()

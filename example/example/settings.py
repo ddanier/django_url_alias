@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django_url_alias',
     'example',
 )
@@ -88,4 +90,7 @@ STATIC_URL = '/static/'
 
 URL_ALIAS_MODULES = (
     'example.url_aliases.ExampleURLAliasModule',
+    'example.url_aliases.FlatpagesURLAliasModule',
 )
+
+SITE_ID = 1

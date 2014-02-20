@@ -11,6 +11,8 @@ def resolve_rewrite(path, url_alias_modules=None):
         new_path = getattr(url_alias_module, 'resolve', lambda path: None)(path)
         if not new_path is None:
             path = new_path
+            print new_path
+            break  # first module wins
     return path
 
 
@@ -25,7 +27,8 @@ def reverse_rewrite(path, url_alias_modules=None):
     for url_alias_module in url_alias_modules:
         new_path = getattr(url_alias_module, 'reverse', lambda path: None)(path)
         if not new_path is None:
-            path = new_path
+            path = new_path  # first module wins
+            break
     if prepend_prefix:
         path = prefix + path
     return path
