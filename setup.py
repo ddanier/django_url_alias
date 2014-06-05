@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "django_url_alias",
-    version = "0.1.1",
+    version = "0.2.0",
     description = 'Allow Django URLS to be completely rewritten (alias names for system URLs)',
     author = 'David Danier',
     author_email = 'david.danier@team23.de',
@@ -26,4 +26,3 @@ setup(
         'Topic :: Utilities'
     ],
 )
-
